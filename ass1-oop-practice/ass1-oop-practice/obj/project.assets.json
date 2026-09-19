@@ -706,11 +706,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maria/RiderProjects/CS440-OOP/ConsoleApp1/ass1-oop-practice/ass1-oop-practice.csproj",
+      "projectUniqueName": "/Users/maria/RiderProjects/ass1-oop-practice/ass1-oop-practice/ass1-oop-practice/ass1-oop-practice.csproj",
       "projectName": "ass1-oop-practice",
-      "projectPath": "/Users/maria/RiderProjects/CS440-OOP/ConsoleApp1/ass1-oop-practice/ass1-oop-practice.csproj",
+      "projectPath": "/Users/maria/RiderProjects/ass1-oop-practice/ass1-oop-practice/ass1-oop-practice/ass1-oop-practice.csproj",
       "packagesPath": "/Users/maria/.nuget/packages/",
-      "outputPath": "/Users/maria/RiderProjects/CS440-OOP/ConsoleApp1/ass1-oop-practice/obj/",
+      "outputPath": "/Users/maria/RiderProjects/ass1-oop-practice/ass1-oop-practice/ass1-oop-practice/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/maria/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q1TdseJgzKY=",
+  "dgSpecHash": "L6mKOGFH/hE=",
   "success": true,
-  "projectFilePath": "/Users/maria/RiderProjects/CS440-OOP/ConsoleApp1/ass1-oop-practice/ass1-oop-practice.csproj",
+  "projectFilePath": "/Users/maria/RiderProjects/ass1-oop-practice/ass1-oop-practice/ass1-oop-practice/ass1-oop-practice.csproj",
   "expectedPackageFiles": [
     "/Users/maria/.nuget/packages/csfml/3.0.0/csfml.3.0.0.nupkg.sha512",
     "/Users/maria/.nuget/packages/sfml.audio/3.0.0/sfml.audio.3.0.0.nupkg.sha512",

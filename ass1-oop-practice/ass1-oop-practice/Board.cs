@@ -1,54 +1,62 @@
-namespace ConsoleApp1;
 using System;
 using System.Collections.Generic;
+using ConsoleApp1;
 
-struct Board
+class Board
 {
-    const int BOARD_WIDTH = 80;
-    const int BOARD_HEIGHT = 25;
+    public const int BOARD_WIDTH = 80;
+    public const int BOARD_HEIGHT = 25;
 
-    public List<List<char>> grid;
     
-    public Board()
+    public List<Shape> shapes = new List<Shape>();    
+    public void Draw()
     {
-        grid = new List<List<char>>();
+        Pixel[,] grid = new Pixel[BOARD_HEIGHT, BOARD_WIDTH];
+            
         for (int i = 0; i < BOARD_HEIGHT; i++)
         {
-            List<char> row = new List<char>();
             for (int j = 0; j < BOARD_WIDTH; j++)
             {
-                row.Add(' ');
+                grid[i, j] = new Pixel(' ');
             }
-            grid.Add(row);
         }
-    }
 
-    public void Print()
-    {
-        foreach (var row in grid)
+        foreach (var shape in shapes)
         {
-            foreach (char c in row)
+            shape.Draw(grid);
+        }
+        for (int i = 0; i < BOARD_HEIGHT; i++)
+        {
+            for (int j = 0; j < BOARD_WIDTH; j++)
             {
-                Console.Write(c);
+                Console.ForegroundColor = grid[i, j].Color;
+                Console.Write(grid[i, j].Symbol);
             }
             Console.WriteLine();
         }
+        Console.ResetColor();
+        
     }
 
-    public void DrawTriangle(int x, int y, int height)
+    // public void Print()
+    // {
+    //     foreach (var row in grid)
+    //     {
+    //         foreach (char c in row)
+    //         {
+    //             Console.Write(c);
+    //         }
+    //         Console.WriteLine();
+    //     }
+    // }
+    
+    public void AddShape(Shape s)
     {
-        for (int i = 0; i < height; ++i)
-        {
-            int numStars = 2 * i + 1;
-            int leftMost = x - i;
-            for (int j = 0; j < numStars; ++j)
-            {
-                int position = leftMost + j;
-                if (position >= 0 && position < BOARD_WIDTH && (y + i) < BOARD_HEIGHT && (y + i) >= 0)
-                {
-                    grid[y + i][position] = '*';
-                }
-            }
-        }
+        shapes.Add(s);
+    }
+
+    public void RemoveShape(Shape s)
+    {
+        shapes.Remove(s);
     }
 }
