@@ -22,7 +22,7 @@ public class Line : Shape
         {
             int row = Y, col = X;
             if (Direction == Direction.Up)
-            {   
+            {
                 row = Y - i;
             }
             else if (Direction == Direction.Down)
@@ -41,10 +41,13 @@ public class Line : Shape
             {
                 throw new ArgumentOutOfRangeException("False direction! Please choose: Up, Down, Left or Right");
             }
+
             if (row >= 0 && row < Board.BOARD_HEIGHT && col >= 0 && col < Board.BOARD_WIDTH)
             {
                 grid[row, col] = new Pixel(symbol, Color);
-            }        
+            }
+
+        }
     }
  
     public override bool ContainsPoint(int x, int y)
