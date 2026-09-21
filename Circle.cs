@@ -13,9 +13,42 @@ namespace ConsoleApp1
             Radius = radius;
         }
 
-        public override void Draw(char[,] grid)
+        public override void Draw(Pixel[,] grid)
         {
-            
+            char symbol = Color.ToString().ToLower()[0];
+            for (int i = -Radius; i <= Radius; i++)
+            {
+                for (int j = -Radius; j <= Radius; j++)
+                {
+                    double distance = Math.Sqrt(j * j + i * i);
+
+                    if (Math.Abs(distance - Radius) < 0.5)
+                    {
+                        int row = Y + i;
+                        int col = X + j;
+                        
+                        if (row >= 0 && row < Board.BOARD_HEIGHT && col >= 0 && col < Board.BOARD_WIDTH)
+                        {
+                            grid[row, col] = new Pixel(symbol, Color);
+                        }   
+                    }
+                }
+            }
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"radius: {Radius}";
+        }
+
+        public override void Edit()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool ContainsPoint(int x, int y)
+        {
+            throw new NotImplementedException();
         }
     }
 

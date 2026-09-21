@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ConsoleApp1;
 
-public abstract  class Shape
+public abstract partial class Shape
 {
     public int Id { get; }
     public int X { get; set; }
@@ -19,7 +19,11 @@ public abstract  class Shape
         Color = color;
         FillMode = fillMode;
     }
-    
+
+    public override string ToString()
+    {
+        return $"id: {Id} | {GetType().Name} | ({X}, {Y}) {Color} {FillMode}";
+    }
     public abstract void Edit();
     
     // public abstract void Paint();  і так вже є  public ConsoleColor Color { get; set; }

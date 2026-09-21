@@ -38,6 +38,14 @@ class Board
         
     }
 
+    public void ListShapes()
+    {
+        foreach (var shape in shapes)
+        {
+            Console.WriteLine($"{shape}");
+        }
+    }
+
     // public void Print()
     // {
     //     foreach (var row in grid)

@@ -49,7 +49,12 @@ public class Line : Shape
 
         }
     }
- 
+
+    public override string ToString()
+    {
+        return base.ToString() + $"length: {Length}";
+    }
+
     public override bool ContainsPoint(int x, int y)
     {
         throw new NotImplementedException();

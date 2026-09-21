@@ -23,8 +23,17 @@ public class Rectangle : Shape
                 {
                     grid[Y + i, X + j] = new Pixel(symbol, Color);
                 }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("radius is too bid!");
+                }
             }
         }
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + $"height: {Height} width: {Width}";
     }
 
     public override bool ContainsPoint(int x, int y)

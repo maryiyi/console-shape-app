@@ -25,6 +25,11 @@ public class Triangle : Shape
         } 
     }
 
+    public override string ToString()
+    {
+        return base.ToString() + $" height: {Height}";
+    }
+
     public override bool ContainsPoint(int x, int y)
     {
         throw new NotImplementedException();
