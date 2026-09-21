@@ -48,7 +48,10 @@ namespace ConsoleApp1
 
         public override bool ContainsPoint(int x, int y)
         {
-            throw new NotImplementedException();
+            int dx = X - x;
+            int dy = Y - y;
+
+            return ((dx * dx + dy * dy) <= Radius * Radius);
         }
     }
 

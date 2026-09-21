@@ -1,8 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace ConsoleApp1;
 
+[JsonPolymorphic(TypeDiscriminatorPropertyName = "type")]
+[JsonDerivedType(typeof(Circle), typeDiscriminator: "circle")]
+[JsonDerivedType(typeof(Rectangle), typeDiscriminator: "rectangle")]
+[JsonDerivedType(typeof(Line), typeDiscriminator: "line")]
+[JsonDerivedType(typeof(Triangle), typeDiscriminator: "triangle")]
 public abstract partial class Shape
 {
     public int Id { get; }

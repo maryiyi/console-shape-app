@@ -38,7 +38,7 @@ public class Rectangle : Shape
 
     public override bool ContainsPoint(int x, int y)
     {
-        throw new NotImplementedException();
+        return (x >= X && x < X + Width && y >= Y && y < Y + Height);
     }
     public override void Edit()
     {

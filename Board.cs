@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using ConsoleApp1;
 
-class Board
+public class Board
 {
     public const int BOARD_WIDTH = 80;
     public const int BOARD_HEIGHT = 25;
@@ -43,6 +43,54 @@ class Board
         foreach (var shape in shapes)
         {
             Console.WriteLine($"{shape}");
+        }
+    }
+    public List<Shape> GetShapes()
+    {
+        return shapes;
+    }
+
+    public void SetShape(List<Shape> loadedShapes)
+    {
+        shapes = loadedShapes;
+    }
+
+    public void Clear()
+    {
+        shapes.Clear();
+        Console.WriteLine("All cleared");
+    }
+
+    public void RemoveShape(int id)
+    {
+        var shape = GetShapeById(id);
+        if (shape != null)
+        {
+            shapes.Remove(shape);
+        }
+        else
+        {
+            Console.WriteLine($"No shape with this id {id}");
+        }
+    }
+    
+    public Shape GetShapeById(int id)
+    {
+        return shapes.FirstOrDefault(s => s.Id == id);
+    }
+
+    public void MoveShape(int id, int newX, int newY)
+    {
+        var shape = GetShapeById(id);
+        if (shape != null)
+        {
+            shape.X = newX;
+            shape.Y = newY;
+            Console.WriteLine($"shape with new coordinates: {newX}, {newY}");
+        }
+        else
+        {
+            Console.WriteLine("No such shape");
         }
     }
 
