@@ -15,6 +15,8 @@ public class Line : Shape
     }
 
 
+    
+
     public override void Draw(Pixel[,] grid)
     {
         char symbol = Color.ToString().ToLower()[0];

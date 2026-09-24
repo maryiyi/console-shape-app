@@ -45,11 +45,23 @@ public abstract partial class Shape
     public virtual void Edit(int[] newParam)
     {
     }
-    
 
-    // public abstract bool IsInside(int i, int j);
+    public virtual int GetBoarders()
+    {
+        return 0;
+    }
 
-    // public abstract bool IsBorder(int i, int j);
+    public virtual bool IsBoarder(int x, int y)
+    {
+        if (ContainsPoint(x, y))
+        {
+            return    !ContainsPoint(x, y + 1)
+                   || !ContainsPoint(x, y - 1)
+                   || !ContainsPoint(x + 1, y)
+                   || !ContainsPoint(x - 1, y);
+        }
+        else {return false;}
+    }
     
     public abstract void Draw(Pixel[,] grid);
     public abstract bool ContainsPoint(int x, int y);

@@ -113,7 +113,7 @@ while (true)
                 case "triangle":
                     if (parts.Length < 7)
                     {
-                        Console.WriteLine("not enough parameters for circle! need: x, y, height");
+                        Console.WriteLine("not enough parameters for triangle! need: x, y, height");
                         break;
                     }
 

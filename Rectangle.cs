@@ -19,13 +19,10 @@ public class Rectangle : Shape
         {
             for (int j = 0; j < Width; j++)
             {
-                if (i >= 0 && i < Board.BOARD_HEIGHT && j >= 0 && j < Board.BOARD_WIDTH)
+                if (i >= 0 && i < Board.BOARD_HEIGHT && j >= 0 && j < Board.BOARD_WIDTH
+                    && (FillMode == FillMode.filled || i == 0 || i == Height - 1 || j == 0 || j == Width - 1))
                 {
                     grid[Y + i, X + j] = new Pixel(symbol, Color);
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException("radius is too bid!");
                 }
             }
         }
@@ -39,6 +36,10 @@ public class Rectangle : Shape
     {
         Height = newParam[0];
         Width = newParam[1];
+    }
+    public override int GetBoarders()
+    {
+        return Math.Max(Height, Width);
     }
 
     public override bool ContainsPoint(int x, int y)

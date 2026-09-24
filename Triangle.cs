@@ -11,18 +11,25 @@ public class Triangle : Shape
     {
         Height = height;
     }
+    
 
     public override void Draw(Pixel[,] grid)
     {
         char symbol = Color.ToString().ToLower()[0];
-        for (int i = 0; i < Height; ++i) {
+        for (int i = 0; i < Height; ++i) 
+        {
             int numStarts = 2 * i + 1;
             int leftMost = X - i;
-            for (int j = 0; j < numStarts; ++j) {
-                int position = leftMost + j;
-                if (position >= 0 && position < Board.BOARD_WIDTH && (Y + i) <
-                    Board.BOARD_HEIGHT && (Y + i) >= 0)
-                    grid[Y + i, position] = new Pixel(symbol, Color);
+            for (int j = 0; j < numStarts; ++j)
+            {
+                int row = Y + i;
+                int col = leftMost + j;
+
+                if (row >= 0 && row < Board.BOARD_HEIGHT && col < Board.BOARD_WIDTH
+                    && col >= 0 && (FillMode == FillMode.filled || IsBoarder(col, row)))
+                {
+                    grid[row, col] = new Pixel(symbol, Color);
+                }
             }
         } 
     }
@@ -36,10 +43,19 @@ public class Triangle : Shape
     {
         Height = newParam[0];
     }
-
+    
     public override bool ContainsPoint(int x, int y)
     {
-        throw new NotImplementedException();
+        int dy = y - Y;
+        
+        if (dy >= 0 && dy < Height)
+        {
+            int dx = x - X;
+            return dx >= -dy && dx <= dy;
+        }
+        
+        return false;
+            
     }
     
 }

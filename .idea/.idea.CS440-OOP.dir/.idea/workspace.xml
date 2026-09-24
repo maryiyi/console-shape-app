@@ -18,6 +18,7 @@
       <change beforePath="$PROJECT_DIR$/Triangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Triangle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/shapes.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/shapes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.dll" afterDir="false" />
@@ -25,7 +26,6 @@
       <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ref/ass1-oop-practice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ref/ass1-oop-practice.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/refint/ass1-oop-practice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/refint/ass1-oop-practice.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
       <updated>1789899618685</updated>
       <workItem from="1789899621589" duration="1032000" />
       <workItem from="1789909029957" duration="30086000" />
-      <workItem from="1790172902679" duration="13606000" />
+      <workItem from="1790172902679" duration="24142000" />
     </task>
     <servers />
   </component>
@@ -144,6 +144,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Line.cs</url>
+          <line>7</line>
+          <properties documentPath="$PROJECT_DIR$/Line.cs" containingFunctionPresentation="Property 'Direction'">
+            <startOffsets>
+              <option value="141" />
+            </startOffsets>
+            <endOffsets>
+              <option value="145" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

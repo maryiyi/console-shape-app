@@ -20,18 +20,15 @@ namespace ConsoleApp1
             {
                 for (int j = -Radius; j <= Radius; j++)
                 {
-                    double distance = Math.Sqrt(j * j + i * i);
-
-                    if (Math.Abs(distance - Radius) < 0.5)
-                    {
-                        int row = Y + i;
-                        int col = X + j;
-                        
-                        if (row >= 0 && row < Board.BOARD_HEIGHT && col >= 0 && col < Board.BOARD_WIDTH)
-                        {
-                            grid[row, col] = new Pixel(symbol, Color);
-                        }   
-                    }
+                    int row = Y + i;
+                    int col = X + j;
+                    
+                    if (row >= 0 && row < Board.BOARD_HEIGHT && col >= 0 && col < Board.BOARD_WIDTH && 
+                        ((FillMode == FillMode.filled && ContainsPoint(col, row)) 
+                            || (FillMode == FillMode.frame && IsBoarder(col, row)))) 
+                    { 
+                        grid[row, col] = new Pixel(symbol, Color);
+                    }   
                 }
             }
         }
@@ -45,15 +42,11 @@ namespace ConsoleApp1
             Radius = newParam[0];
         }
 
-        // public override bool IsInside(int i, int j)
-        // {
-        //     return i * i + j * j <= Radius * Radius;
-        // }
-
-        // public override bool IsBorder(int i, int j)
-        // {
-        //     return i * i + j * j == Radius * Radius && 
-        // }
+        public override int GetBoarders()
+        {
+            return Radius;
+        }
+    
         
         public override bool ContainsPoint(int x, int y)
         {
