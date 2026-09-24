@@ -35,14 +35,15 @@ public class Rectangle : Shape
     {
         return base.ToString() + $"height: {Height} width: {Width}";
     }
+    public override void Edit(int[] newParam)
+    {
+        Height = newParam[0];
+        Width = newParam[1];
+    }
 
     public override bool ContainsPoint(int x, int y)
     {
         return (x >= X && x < X + Width && y >= Y && y < Y + Height);
     }
-    public override void Edit()
-    {
-        throw new NotImplementedException();
-    }
-
+    
 }

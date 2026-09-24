@@ -54,15 +54,16 @@ public class Line : Shape
     {
         return base.ToString() + $"length: {Length}";
     }
+    
+    public override void Edit(int[] newParam)
+    {
+        Length = newParam[0];
+    }
 
     public override bool ContainsPoint(int x, int y)
     {
         throw new NotImplementedException();
     }
     
-    public override void Edit()
-    {
-        throw new NotImplementedException();
-    }
 
 }

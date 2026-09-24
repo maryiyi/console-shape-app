@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace ConsoleApp1;
 
 public class Triangle : Shape
@@ -29,14 +31,15 @@ public class Triangle : Shape
     {
         return base.ToString() + $" height: {Height}";
     }
+    
+    public override void Edit(int[] newParam)
+    {
+        Height = newParam[0];
+    }
 
     public override bool ContainsPoint(int x, int y)
     {
         throw new NotImplementedException();
     }
     
-    public override void Edit()
-    {
-        throw new NotImplementedException();
-    }
 }

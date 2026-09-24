@@ -40,12 +40,21 @@ namespace ConsoleApp1
         {
             return base.ToString() + $"radius: {Radius}";
         }
-
-        public override void Edit()
+        public override void Edit(int[] newParam)
         {
-            throw new NotImplementedException();
+            Radius = newParam[0];
         }
 
+        // public override bool IsInside(int i, int j)
+        // {
+        //     return i * i + j * j <= Radius * Radius;
+        // }
+
+        // public override bool IsBorder(int i, int j)
+        // {
+        //     return i * i + j * j == Radius * Radius && 
+        // }
+        
         public override bool ContainsPoint(int x, int y)
         {
             int dx = X - x;

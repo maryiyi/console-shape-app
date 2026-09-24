@@ -1,18 +1,9 @@
 ﻿using System.Globalization;
+using System.Linq;
 using ConsoleApp1;
 
 Board b = new Board();
-//
-// Triangle t = new Triangle(1, 20, 2, ConsoleColor.Yellow, FillMode.filled, 5);
-// Line l = new Line(2, 20, 10, ConsoleColor.Cyan, FillMode.filled, 5, Direction.Up);
-// Rectangle r = new Rectangle(3, 15, 1, ConsoleColor.Red, FillMode.filled, 4, 6);
-// Circle c = new Circle(4, 10, 2, ConsoleColor.Blue, FillMode.filled, 3);
-//
-//
-// b.AddShape(t);
-// b.AddShape(l);
-// b.AddShape(r);
-// b.AddShape(c);
+int? selectedShapeId = null;
 
 while (true)
 {
@@ -30,11 +21,11 @@ while (true)
             b.ListShapes();
             break;
         case "shapes":
-            Console.WriteLine("Available shapes to add:\n" +
-                              "Circle: [id] [x] [y] [color] [fillMode] [radius]\n" +
-                              "Rectangle: [id] [x] [y] [color] [fillMode] [height] [width]\n" +
-                              "Line: [id] [x] [y] [color] [fillMode] [length]\n" +
-                              "Triangle: [id] [x] [y] [color] [fillMode] [height]\n"); break;
+            Console.WriteLine("available shapes to add:\n" +
+                              "circle: [id] [x] [y] [color] [fillMode] [radius]\n" +
+                              "rectangle: [id] [x] [y] [color] [fillMode] [height] [width]\n" +
+                              "line: [id] [x] [y] [color] [fillMode] [length]\n" +
+                              "triangle: [id] [x] [y] [color] [fillMode] [height]\n"); break;
         case "add":
             if (parts.Length < 5)
             {
@@ -137,7 +128,7 @@ while (true)
                 }
                     break;
                 default:
-                    Console.WriteLine($"Unknown shape type {strType}");
+                    Console.WriteLine($"unknown shape type {strType}");
                     break;
 
             }
@@ -170,7 +161,7 @@ while (true)
             }
             else
             {
-                Console.WriteLine("Write an id of the shape you want to remove!");
+                Console.WriteLine("write an id of the shape you want to remove!");
             }
 
             break;
@@ -179,14 +170,15 @@ while (true)
         {
             if (parts.Length == 2 && int.TryParse(parts[1], out int outputId))
             {
-                var selectedShape = b.GetShapeById(outputId);
-                if (selectedShape != null)
+                var shape = b.GetShapeById(outputId);
+                if (shape != null)
                 {
-                    Console.WriteLine($"Selected shape: {selectedShape}");
+                    selectedShapeId = outputId;
+                    Console.WriteLine($"selected shape: {shape}");
                 }
                 else
                 {
-                    Console.WriteLine($"No such shape");
+                    Console.WriteLine($"no such shape");
                 }
             }
             else if(parts.Length >= 3 && int.TryParse(parts[1], out int coX) && int.TryParse(parts[2], out int coY))
@@ -194,6 +186,7 @@ while (true)
                 var shape = b.GetShapes().LastOrDefault(shape => shape.ContainsPoint(coX, coY));
                 if (shape != null)
                 {
+                    selectedShapeId = shape.Id;
                     Console.WriteLine($"Selected shape by coordinates: {shape}");
                 }
                 else
@@ -203,7 +196,7 @@ while (true)
             }
             else
             {
-                Console.WriteLine("Wrong parametrs!");
+                Console.WriteLine("wrong parametrs!");
             }
             break;
         }
@@ -221,10 +214,67 @@ while (true)
             }
             break;
         }
+        case "paint":
+        {
+            if (selectedShapeId != null & parts.Length >= 2)
+            {
+                string colorStr = parts[1].ToLower();
+                ConsoleColor newColor = colorStr switch
+                {
+                    "red" => ConsoleColor.Red,
+                    "blue" => ConsoleColor.Blue,
+                    "green" => ConsoleColor.Green,
+                    "yellow" => ConsoleColor.Yellow,
+                    _ => ConsoleColor.White
+                };
+                Shape shape = b.GetShapeById(selectedShapeId.Value);
+                shape.Paint(selectedShapeId.Value, newColor, b);
+            }
+            else
+            {
+                Console.WriteLine("error: no shape selected");
+            }
+            break;
+        }
+        case "edit":
+        {
+            if (selectedShapeId != null && parts.Length >= 2)
+            {
+                Shape shape = b.GetShapeById(selectedShapeId.Value);
+
+                if (shape is Triangle triangle && int.TryParse(parts[1], out int newHeight))
+                {
+                    triangle.Height = newHeight;
+                    Console.WriteLine("triangle updated!");
+                }
+                else if (shape is Circle circle && int.TryParse(parts[1], out int newRadius))
+                {
+                    circle.Radius = newRadius;
+                    Console.WriteLine("circle updated!");
+                }
+                else if (shape is Rectangle rectangle && int.TryParse(parts[1], out int newHeightRec) && int.TryParse(parts[2], out int newWidthRec))
+                {
+                    rectangle.Height = newHeightRec;
+                    rectangle.Width = newWidthRec;
+                    Console.WriteLine("rectangle updated!");
+                }
+                else if (shape is Line line && int.TryParse(parts[1], out int newLength))
+                {
+                    line.Length = newLength;
+                    Console.WriteLine("line updated!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("not selected any shape or too much parametrs");
+            }
+
+            break;
+        }
         
 
     default:
-            Console.WriteLine("Uncorrect command!");
+            Console.WriteLine("uncorrect command!");
             break;
     }
 }

@@ -30,9 +30,27 @@ public abstract partial class Shape
     {
         return $"id: {Id} | {GetType().Name} | ({X}, {Y}) {Color} {FillMode}";
     }
-    public abstract void Edit();
+
+    public virtual void Paint(int id, ConsoleColor newColor, Board board)
+    {
+        {
+            Shape shape = board.GetShapeById(id);
+            if (shape != null)
+            {
+                shape.Color = newColor;
+            }
+        }
+    }
+
+    public virtual void Edit(int[] newParam)
+    {
+    }
     
-    // public abstract void Paint();  і так вже є  public ConsoleColor Color { get; set; }
+
+    // public abstract bool IsInside(int i, int j);
+
+    // public abstract bool IsBorder(int i, int j);
+    
     public abstract void Draw(Pixel[,] grid);
     public abstract bool ContainsPoint(int x, int y);
 }
