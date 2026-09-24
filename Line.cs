@@ -64,7 +64,18 @@ public class Line : Shape
 
     public override bool ContainsPoint(int x, int y)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < Length; i++)
+        {
+            int row = Y, col = X;
+            if (Direction == Direction.Up) row = Y - i;
+            else if (Direction == Direction.Down) row = Y + i;
+            else if (Direction == Direction.Left) col = X - i;
+            else if (Direction == Direction.Right) col = X + i;
+
+            if (col == x && row == y) return true;
+        }
+        return false;
+        
     }
     
 

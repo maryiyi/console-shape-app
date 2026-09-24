@@ -19,10 +19,12 @@ public class Rectangle : Shape
         {
             for (int j = 0; j < Width; j++)
             {
-                if (i >= 0 && i < Board.BOARD_HEIGHT && j >= 0 && j < Board.BOARD_WIDTH
+                int row = Y + i;
+                int col = X + j;
+                if (row >= 0 && row < Board.BOARD_HEIGHT && col >= 0 && col < Board.BOARD_WIDTH
                     && (FillMode == FillMode.filled || i == 0 || i == Height - 1 || j == 0 || j == Width - 1))
                 {
-                    grid[Y + i, X + j] = new Pixel(symbol, Color);
+                    grid[row, col] = new Pixel(symbol, Color);
                 }
             }
         }

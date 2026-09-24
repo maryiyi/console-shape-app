@@ -146,11 +146,13 @@ while (true)
             string filename = parts.Length > 1 ? parts[1] : "shapes.json";
             FileManager fileManager = new FileManager();
             fileManager.LoadFromFile(filename, b);
+            selectedShapeId = null;
         }
             break;
         case "clear":
         {
             b.Clear();
+            selectedShapeId = null;
             break;
         }
         case "remove":

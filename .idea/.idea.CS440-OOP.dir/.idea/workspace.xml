@@ -9,23 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae0014e4-2238-47d7-8905-c2c4d6523a43" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CS440-OOP.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CS440-OOP.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Board.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Circle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Circle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Line.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Line.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rectangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rectangle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shape.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Triangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Triangle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/shapes.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/shapes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ref/ass1-oop-practice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ref/ass1-oop-practice.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/refint/ass1-oop-practice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/refint/ass1-oop-practice.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +101,7 @@
       <updated>1789899618685</updated>
       <workItem from="1789899621589" duration="1032000" />
       <workItem from="1789909029957" duration="30086000" />
-      <workItem from="1790172902679" duration="24142000" />
+      <workItem from="1790172902679" duration="25608000" />
     </task>
     <servers />
   </component>
