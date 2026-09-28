@@ -10,7 +10,12 @@ while (true)
     Console.WriteLine("write a command:\ndraw list shapes add select remove edit paint move clear save load");
     string output = Console.ReadLine();
     string[] parts = output.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+    
+    if (parts.Length == 0){continue;} 
+    
     string cmd = parts[0].ToLower();
+    
+    
 
     switch (cmd)
     {
@@ -36,6 +41,7 @@ while (true)
             string strFillMode = parts[1].ToLower();
             string strColor = parts[2].ToLower();
             string strType = parts[3].ToLower();
+            
 
             FillMode fillMode = (strFillMode == "filled") ? FillMode.filled : FillMode.frame;
             ConsoleColor color = strColor switch
@@ -46,21 +52,31 @@ while (true)
                 "yellow" => ConsoleColor.Yellow,
                 _ => ConsoleColor.White
             };
+
+            if (!int.TryParse(parts[4], out int x) || !int.TryParse(parts[5], out int y))
+            {
+                Console.WriteLine("error! x and y must be numbers");
+                break;
+            }
+
             int id = new Random().Next(1, 100);
+
             switch (strType)
             {
                 case "circle":
                     if (parts.Length < 7)
                     {
-                        Console.WriteLine("not enough parameters for circle! need: x, y, radius");
+                        Console.WriteLine("not enough parameters for circle ! need: x, y, radius");
+                        break;
+                    }
+
+                    if (!int.TryParse(parts[6], out int radius))
+                    {
+                        Console.WriteLine("radius must be a number");
                         break;
                     }
 
                 {
-                    int x = int.Parse(parts[4]);
-                    int y = int.Parse(parts[5]);
-                    int radius = int.Parse(parts[6]);
-
                     Circle circle = new Circle(id, x, y, color, fillMode, radius);
                     b.AddShape(circle);
                     Console.WriteLine($"circle was added, id: {id}");
@@ -69,47 +85,47 @@ while (true)
                 case "rectangle":
                     if (parts.Length < 8)
                     {
-                        Console.WriteLine("not enough parameters for rectangle! need: x, y, height, width");
+                        Console.WriteLine(
+                            "not enough parameters for rectangle! need: x, y, height, width");
                         break;
                     }
 
-                {
-                    int x = int.Parse(parts[4]);
-                    int y = int.Parse(parts[5]);
-                    int height = int.Parse(parts[6]);
-                    int width = int.Parse(parts[7]);
-
-                    Rectangle rectangle = new Rectangle(id, x, y, color, fillMode, height, width);
-                    b.AddShape(rectangle);
-                    Console.WriteLine($"rectangle was added, id: {id}");
-                }
+                    if (!int.TryParse(parts[6], out int heightR) || !int.TryParse(parts[7], out int width))
+                    {
+                        Console.WriteLine("not enough parameters for rectangle!");
+                        break;
+                    }
+                    {
+                        Rectangle rectangle = new Rectangle(id, x, y, color, fillMode, heightR, width);
+                        b.AddShape(rectangle);
+                        Console.WriteLine($"rectangle was added, id: {id}");
+                    }
                     break;
+                
                 case "line":
-                    if (parts.Length < 8)
+                    if (parts.Length < 8 || !int.TryParse(parts[6], out int length))
                     {
-                        Console.WriteLine("not enough parameters for line! need: x, y, length, direction");
+                        Console.WriteLine("not enough parameters for line or lenght is not a number! need: x, y, length, direction");
                         break;
                     }
 
-                {
-                    int x = int.Parse(parts[4]);
-                    int y = int.Parse(parts[5]);
-                    int length = int.Parse(parts[6]);
-                    string dirStr = parts[7].ToLower();
-                    Direction direction = dirStr switch
                     {
-                        "up" => Direction.Up,
-                        "down" => Direction.Down,
-                        "left" => Direction.Left,
-                        "right" => Direction.Right,
-                        _ => Direction.Left
-                    };
+                        string dirStr = parts[7].ToLower();
+                        Direction direction = dirStr switch
+                        {
+                            "up" => Direction.Up,
+                            "down" => Direction.Down,
+                            "left" => Direction.Left,
+                            "right" => Direction.Right,
+                            _ => Direction.Left
+                        };
 
-                    Line line = new Line(id, x, y, color, fillMode, length, direction);
-                    b.AddShape(line);
-                    Console.WriteLine($"line was added, id: {id}");
-                }
-                    break;
+                        Line line = new Line(id, x, y, color, fillMode, length, direction);
+                        b.AddShape(line);
+                        Console.WriteLine($"line was added, id: {id}");
+                    }
+
+            break;
                 case "triangle":
                     if (parts.Length < 7)
                     {
@@ -117,15 +133,16 @@ while (true)
                         break;
                     }
 
-                {
-                    int x = int.Parse(parts[4]);
-                    int y = int.Parse(parts[5]);
-                    int height = int.Parse(parts[6]);
-
-                    Triangle triangle = new Triangle(id, x, y, color, fillMode, height);
-                    b.AddShape(triangle);
-                    Console.WriteLine($"triangle was added, id: {id}");
-                }
+                    if (!int.TryParse(parts[6], out int height))
+                    {
+                        Console.WriteLine("height is not a number!");
+                        break;
+                    }
+                    {
+                        Triangle triangle = new Triangle(id, x, y, color, fillMode, height);
+                        b.AddShape(triangle);
+                        Console.WriteLine($"triangle was added, id: {id}");
+                    }
                     break;
                 default:
                     Console.WriteLine($"unknown shape type {strType}");
@@ -274,7 +291,6 @@ while (true)
             break;
         }
         
-
     default:
             Console.WriteLine("uncorrect command!");
             break;

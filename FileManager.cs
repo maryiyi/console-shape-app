@@ -22,11 +22,19 @@ public class FileManager
     {
         if (File.Exists(filename))
         {
-            string jsonString = File.ReadAllText(filename);
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var shapes = JsonSerializer.Deserialize<List<Shape>>(jsonString) ?? new List<Shape>();
-            b.SetShape(shapes);
-            Console.WriteLine("Loaded successfully!");
+            try
+            {
+                string jsonString = File.ReadAllText(filename);
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var shapes = JsonSerializer.Deserialize<List<Shape>>(jsonString) ?? new List<Shape>();
+                b.SetShape(shapes);
+                Console.WriteLine("Loaded successfully!");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("error! invalid file!");
+            }
+            
         }
         else
         {
