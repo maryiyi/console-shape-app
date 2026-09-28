@@ -1,9 +1,9 @@
 namespace ConsoleApp1;
 
-public class Pixel
+public readonly struct Pixel
 {
-    public char Symbol;
-    public ConsoleColor Color;
+     public readonly char Symbol;
+     public readonly ConsoleColor Color;
 
     public Pixel(char symbol, ConsoleColor color = ConsoleColor.White)
     {

@@ -13,11 +13,7 @@ public class Line : Shape
         Length = length;
         Direction = direction;
     }
-
-
-    
-
-    public override void Draw(Pixel[,] grid)
+    public override void Draw(Pixel[,] grid, Board b)
     {
         char symbol = Color.ToString().ToLower()[0];
         for (int i = 0; i < Length; i++)
@@ -44,7 +40,7 @@ public class Line : Shape
                 throw new ArgumentOutOfRangeException("False direction! Please choose: Up, Down, Left or Right");
             }
 
-            if (row >= 0 && row < Board.BOARD_HEIGHT && col >= 0 && col < Board.BOARD_WIDTH)
+            if (row >= 0 && row < b.GetHeight() && col >= 0 && col < b.GetWidth())
             {
                 grid[row, col] = new Pixel(symbol, Color);
             }
@@ -59,7 +55,10 @@ public class Line : Shape
     
     public override void Edit(int[] newParam)
     {
-        Length = newParam[0];
+        if (newParam.Length > 0)
+        {
+            Length = newParam[0];
+        }
     }
 
     public override bool ContainsPoint(int x, int y)

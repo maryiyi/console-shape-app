@@ -11,9 +11,7 @@ public class Triangle : Shape
     {
         Height = height;
     }
-    
-
-    public override void Draw(Pixel[,] grid)
+    public override void Draw(Pixel[,] grid, Board b)
     {
         char symbol = Color.ToString().ToLower()[0];
         for (int i = 0; i < Height; ++i) 
@@ -25,7 +23,7 @@ public class Triangle : Shape
                 int row = Y + i;
                 int col = leftMost + j;
 
-                if (row >= 0 && row < Board.BOARD_HEIGHT && col < Board.BOARD_WIDTH
+                if (row >= 0 && row < b.GetHeight() && col < b.GetWidth()
                     && col >= 0 && (FillMode == FillMode.filled || IsBoarder(col, row)))
                 {
                     grid[row, col] = new Pixel(symbol, Color);
@@ -33,17 +31,17 @@ public class Triangle : Shape
             }
         } 
     }
-
     public override string ToString()
     {
         return base.ToString() + $" height: {Height}";
     }
-    
     public override void Edit(int[] newParam)
     {
-        Height = newParam[0];
+        if (newParam.Length > 0)
+        {
+            Height = newParam[0];
+        }
     }
-    
     public override bool ContainsPoint(int x, int y)
     {
         int dy = y - Y;

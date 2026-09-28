@@ -12,7 +12,7 @@ public class Rectangle : Shape
         Width = width;
     }
     
-    public override void Draw(Pixel[,] grid)
+    public override void Draw(Pixel[,] grid, Board b)
     {
         char symbol = Color.ToString().ToLower()[0];
         for (int i = 0; i < Height; i++)
@@ -21,7 +21,7 @@ public class Rectangle : Shape
             {
                 int row = Y + i;
                 int col = X + j;
-                if (row >= 0 && row < Board.BOARD_HEIGHT && col >= 0 && col < Board.BOARD_WIDTH
+                if (row >= 0 && row < b.GetHeight() && col >= 0 && col < b.GetWidth()
                     && (FillMode == FillMode.filled || i == 0 || i == Height - 1 || j == 0 || j == Width - 1))
                 {
                     grid[row, col] = new Pixel(symbol, Color);
@@ -36,8 +36,12 @@ public class Rectangle : Shape
     }
     public override void Edit(int[] newParam)
     {
-        Height = newParam[0];
-        Width = newParam[1];
+        if (newParam.Length > 0)
+        {
+            Height = newParam[0];
+            Width = newParam[1];
+        }
+        
     }
     public override int GetBoarders()
     {

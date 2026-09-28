@@ -9,8 +9,142 @@
   <component name="ChangeListManager">
     <list default="true" id="ae0014e4-2238-47d7-8905-c2c4d6523a43" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CS440-OOP.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CS440-OOP.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Circle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Circle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Line.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Line.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pixel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pixel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rectangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rectangle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shape.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Triangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Triangle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/SFML.Audio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/SFML.Graphics.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/SFML.System.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/SFML.Window.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/ass1-oop-practice.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libcsfml-audio.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libcsfml-audio.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libcsfml-graphics.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libcsfml-graphics.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libcsfml-system.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libcsfml-system.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libcsfml-window.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libcsfml-window.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libsfml-audio.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libsfml-graphics.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libsfml-system.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm/native/libsfml-window.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libcsfml-audio.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libcsfml-audio.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libcsfml-graphics.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libcsfml-graphics.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libcsfml-system.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libcsfml-system.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libcsfml-window.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libcsfml-window.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libsfml-audio.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libsfml-graphics.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libsfml-system.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-arm64/native/libsfml-window.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libcsfml-audio.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libcsfml-audio.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libcsfml-graphics.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libcsfml-graphics.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libcsfml-system.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libcsfml-system.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libcsfml-window.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libcsfml-window.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libsfml-audio.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libsfml-graphics.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libsfml-system.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libsfml-window.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libcsfml-audio.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libcsfml-audio.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libcsfml-graphics.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libcsfml-graphics.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libcsfml-system.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libcsfml-system.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libcsfml-window.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libcsfml-window.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libsfml-audio.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libsfml-graphics.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libsfml-system.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/linux-x64/native/libsfml-window.so.3.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libcsfml-audio.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libcsfml-audio.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libcsfml-graphics.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libcsfml-graphics.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libcsfml-system.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libcsfml-system.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libcsfml-window.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libcsfml-window.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libsfml-audio.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libsfml-graphics.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libsfml-system.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-arm64/native/libsfml-window.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libcsfml-audio.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libcsfml-audio.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libcsfml-graphics.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libcsfml-graphics.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libcsfml-system.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libcsfml-system.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libcsfml-window.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libcsfml-window.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libsfml-audio.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libsfml-graphics.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libsfml-system.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/osx-x64/native/libsfml-window.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/csfml-audio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/csfml-graphics.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/csfml-system.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/csfml-window.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/msvcp140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/sfml-audio-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/sfml-graphics-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/sfml-system-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/sfml-window-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-arm64/native/vcruntime140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/csfml-audio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/csfml-graphics.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/csfml-system.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/csfml-window.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/msvcp140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/sfml-audio-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/sfml-graphics-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/sfml-system-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/sfml-window-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/vcruntime140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x64/native/vcruntime140_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/csfml-audio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/csfml-graphics.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/csfml-system.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/csfml-window.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/msvcp140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/sfml-audio-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/sfml-graphics-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/sfml-system-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/sfml-window-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/runtimes/win-x86/native/vcruntime140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net10.0/shapes.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net10.0/shapes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop-practice.sourcelink.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ass1-oop.DCEEDACE.Up2Date" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/ref/ass1-oop-practice.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net10.0/refint/ass1-oop-practice.dll" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +246,8 @@
       <workItem from="1790172902679" duration="30967000" />
       <workItem from="1790536256271" duration="5542000" />
       <workItem from="1790574771971" duration="482000" />
-      <workItem from="1790580216414" duration="339000" />
+      <workItem from="1790580216414" duration="8387000" />
+      <workItem from="1790613679039" duration="5021000" />
     </task>
     <servers />
   </component>
@@ -139,19 +274,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Line.cs</url>
-          <line>7</line>
-          <properties documentPath="$PROJECT_DIR$/Line.cs" containingFunctionPresentation="Property 'Direction'">
-            <startOffsets>
-              <option value="141" />
-            </startOffsets>
-            <endOffsets>
-              <option value="145" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

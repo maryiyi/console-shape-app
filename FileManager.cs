@@ -41,4 +41,19 @@ public class FileManager
             Console.WriteLine("File doesnt exist!");
         }
     }
+
+    public void SaveCmd(string[] parts, Board b)
+    {
+        string filename = parts.Length > 1 ? parts[1] : "shapes.json";
+        FileManager fileManager = new FileManager();
+        fileManager.SaveToFile(filename, b);
+    }
+
+    public void LoadCmd(string[] parts, Board b)
+    {
+        string filename = parts.Length > 1 ? parts[1] : "shapes.json";
+        FileManager fileManager = new FileManager();
+        fileManager.LoadFromFile(filename, b);
+        b.ClearSelectedId();
+    }
 }

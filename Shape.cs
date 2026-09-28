@@ -15,7 +15,7 @@ public abstract partial class Shape
     public int X { get; set; }
     public int Y { get; set; }
     public ConsoleColor Color { get; set; }
-    public FillMode FillMode { get; set; }
+    public FillMode FillMode { get;}
 
     public Shape(int id, int x, int y, ConsoleColor color, FillMode fillMode)
     {
@@ -25,32 +25,21 @@ public abstract partial class Shape
         Color = color;
         FillMode = fillMode;
     }
-
     public override string ToString()
     {
         return $"id: {Id} | {GetType().Name} | ({X}, {Y}) {Color} {FillMode}";
     }
-
     public virtual void Paint(int id, ConsoleColor newColor, Board board)
     {
-        {
             Shape shape = board.GetShapeById(id);
             if (shape != null)
             {
                 shape.Color = newColor;
             }
-        }
+        
     }
-
-    public virtual void Edit(int[] newParam)
-    {
-    }
-
-    public virtual int GetBoarders()
-    {
-        return 0;
-    }
-
+    public virtual void Edit(int[] newParam) { }
+    public virtual int GetBoarders() { return 0; }
     public virtual bool IsBoarder(int x, int y)
     {
         if (ContainsPoint(x, y))
@@ -62,7 +51,8 @@ public abstract partial class Shape
         }
         else {return false;}
     }
-    
-    public abstract void Draw(Pixel[,] grid);
+    public abstract void Draw(Pixel[,] grid, Board b);
     public abstract bool ContainsPoint(int x, int y);
+
+    
 }
