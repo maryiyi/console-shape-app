@@ -92,7 +92,7 @@ while (true)
 
                     if (!int.TryParse(parts[6], out int heightR) || !int.TryParse(parts[7], out int width))
                     {
-                        Console.WriteLine("not enough parameters for rectangle!");
+                        Console.WriteLine("height and width have to be numbers!");
                         break;
                     }
                     {
@@ -103,9 +103,14 @@ while (true)
                     break;
                 
                 case "line":
-                    if (parts.Length < 8 || !int.TryParse(parts[6], out int length))
+                    if (parts.Length < 8)
                     {
-                        Console.WriteLine("not enough parameters for line or lenght is not a number! need: x, y, length, direction");
+                        Console.WriteLine("not enough parameters for line ! need: x, y, length, direction");
+                        break;
+                    }
+                    if (!int.TryParse(parts[6], out int length))
+                    {
+                        Console.WriteLine("length has to be a number!");
                         break;
                     }
 
