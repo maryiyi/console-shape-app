@@ -41,7 +41,6 @@ public abstract partial class Shape
         
     }
     public virtual void Edit(int[] newParam) { }
-    public virtual int GetBoarders() { return 0; }
     public virtual bool IsBoarder(int x, int y)
     {
         if (ContainsPoint(x, y))
@@ -51,9 +50,28 @@ public abstract partial class Shape
                    || !ContainsPoint(x + 1, y)
                    || !ContainsPoint(x - 1, y);
         }
-        else {return false;}
+        return false;
     }
-    public abstract void Draw(Pixel[,] grid, Board b);
+    
+    public bool Occupies(int x, int y)
+    {
+        return FillMode == FillMode.filled ? ContainsPoint(x, y) : IsBoarder(x, y);
+    }
+    public void Draw(Pixel[,] grid, Board b)
+    {
+        char symbol = Color.ToString().ToLower()[0];
+
+        for (int row = 0; row < b.GetHeight(); row++)
+        {
+            for (int col = 0; col < b.GetWidth(); col++)
+            {
+                if (Occupies(col, row))
+                {
+                    grid[row, col] = new Pixel(symbol, Color);
+                }
+            }
+        }
+    }
     public abstract bool ContainsPoint(int x, int y);
 
     

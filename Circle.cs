@@ -12,26 +12,6 @@ namespace ConsoleApp1
             Radius = radius;
         }
 
-        public override void Draw(Pixel[,] grid, Board b)
-        {
-            char symbol = Color.ToString().ToLower()[0];
-            for (int i = -Radius; i <= Radius; i++)
-            {
-                for (int j = -Radius; j <= Radius; j++)
-                {
-                    int row = Y + i;
-                    int col = X + j;
-                    
-                    if (row >= 0 && row < b.GetHeight() && col >= 0 && col < b.GetWidth() && 
-                        ((FillMode == FillMode.filled && ContainsPoint(col, row)) 
-                            || (FillMode == FillMode.frame && IsBoarder(col, row)))) 
-                    { 
-                        grid[row, col] = new Pixel(symbol, Color);
-                    }   
-                }
-            }
-        }
-
         public override string ToString()
         {
             return base.ToString() + $"radius: {Radius}";
@@ -41,10 +21,6 @@ namespace ConsoleApp1
             Radius = newParam[0];
         }
 
-        public override int GetBoarders()
-        {
-            return Radius;
-        }
     
         
         public override bool ContainsPoint(int x, int y)

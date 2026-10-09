@@ -14,40 +14,7 @@ public class Line : Shape
         Length = length;
         Direction = direction;
     }
-    public override void Draw(Pixel[,] grid, Board b)
-    {
-        char symbol = Color.ToString().ToLower()[0];
-        for (int i = 0; i < Length; i++)
-        {
-            int row = Y, col = X;
-            if (Direction == Direction.Up)
-            {
-                row = Y - i;
-            }
-            else if (Direction == Direction.Down)
-            {
-                row = Y + i;
-            }
-            else if (Direction == Direction.Left)
-            {
-                col = X - i;
-            }
-            else if (Direction == Direction.Right)
-            {
-                col = X + i;
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException("False direction! Please choose: Up, Down, Left or Right");
-            }
-
-            if (row >= 0 && row < b.GetHeight() && col >= 0 && col < b.GetWidth())
-            {
-                grid[row, col] = new Pixel(symbol, Color);
-            }
-
-        }
-    }
+    
 
     public override string ToString()
     {

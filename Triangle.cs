@@ -12,26 +12,6 @@ public class Triangle : Shape
     {
         Height = height;
     }
-    public override void Draw(Pixel[,] grid, Board b)
-    {
-        char symbol = Color.ToString().ToLower()[0];
-        for (int i = 0; i < Height; ++i) 
-        {
-            int numStarts = 2 * i + 1;
-            int leftMost = X - i;
-            for (int j = 0; j < numStarts; ++j)
-            {
-                int row = Y + i;
-                int col = leftMost + j;
-
-                if (row >= 0 && row < b.GetHeight() && col < b.GetWidth()
-                    && col >= 0 && (FillMode == FillMode.filled || IsBoarder(col, row)))
-                {
-                    grid[row, col] = new Pixel(symbol, Color);
-                }
-            }
-        } 
-    }
     public override string ToString()
     {
         return base.ToString() + $" height: {Height}";
