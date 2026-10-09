@@ -27,7 +27,7 @@ public class FileManager
                 string jsonString = File.ReadAllText(filename);
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                 var shapes = JsonSerializer.Deserialize<List<Shape>>(jsonString) ?? new List<Shape>();
-                b.SetShape(shapes);
+                b.SetShapes(shapes);
                 Console.WriteLine("Loaded successfully!");
             }
             catch (Exception)

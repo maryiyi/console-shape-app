@@ -6,7 +6,7 @@ public class Line : Shape
 {
     public int Length { get; set; }
     public Direction Direction { get; set; }
-    public override int ExpectedParameterCount => 2;
+    public override int ExpectedParameterCount => 1;
 
     public Line(int id, int x, int y, ConsoleColor color, FillMode fillMode, int length, Direction direction) 
         : base(id, x, y, color, fillMode)
@@ -41,6 +41,4 @@ public class Line : Shape
         return false;
         
     }
-    
-
 }

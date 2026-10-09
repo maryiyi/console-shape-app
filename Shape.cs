@@ -9,7 +9,7 @@ namespace ConsoleApp1;
 [JsonDerivedType(typeof(Rectangle), typeDiscriminator: "rectangle")]
 [JsonDerivedType(typeof(Line), typeDiscriminator: "line")]
 [JsonDerivedType(typeof(Triangle), typeDiscriminator: "triangle")]
-public abstract partial class Shape
+public abstract class Shape
 {
     public int Id { get; }
     public int X { get; set; }
@@ -41,7 +41,7 @@ public abstract partial class Shape
         
     }
     public virtual void Edit(int[] newParam) { }
-    public virtual bool IsBoarder(int x, int y)
+    public virtual bool IsBorder(int x, int y)
     {
         if (ContainsPoint(x, y))
         {
@@ -55,7 +55,7 @@ public abstract partial class Shape
     
     public bool Occupies(int x, int y)
     {
-        return FillMode == FillMode.filled ? ContainsPoint(x, y) : IsBoarder(x, y);
+        return FillMode == FillMode.filled ? ContainsPoint(x, y) : IsBorder(x, y);
     }
     public void Draw(Pixel[,] grid, Board b)
     {

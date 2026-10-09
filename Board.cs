@@ -7,8 +7,9 @@ public class Board
     private const int BOARD_WIDTH = 80;
     private const int BOARD_HEIGHT = 25;
     
-    private List<Shape> shapes = new List<Shape>();
+    private List<Shape> _shapes = new List<Shape>();
     internal int? selectedShapeId = null;
+    private int _nextId = 1;
 
     public void Draw()
     {
@@ -22,7 +23,7 @@ public class Board
             }
         }
 
-        foreach (var shape in shapes)
+        foreach (var shape in _shapes)
         {
             shape.Draw(grid, this);
         }
@@ -46,22 +47,30 @@ public class Board
     public int GetWidth() { return BOARD_WIDTH;}
     public void ListShapes()
     {
-        foreach (var shape in shapes)
+        foreach (var shape in _shapes)
         {
             Console.WriteLine($"{shape}");
         }
     }
     public IReadOnlyList<Shape> GetShapes()
     {
-        return shapes.AsReadOnly();
+        return _shapes.AsReadOnly();
     }
-    public void SetShape(List<Shape> loadedShapes)
+    public void SetShapes(List<Shape> loadedShapes)
     {
-        shapes = loadedShapes;
+        _shapes.AddRange(loadedShapes);
+        if (_shapes.Any())
+        {
+            _nextId = _shapes.Max(s => s.Id) + 1;
+        }
+        else
+        {
+            _nextId = 1;
+        }
     }
     public void Clear()
     {
-        shapes.Clear();
+        _shapes.Clear();
         Console.WriteLine("All cleared");
     }
     public void RemoveShape(int id)
@@ -69,7 +78,7 @@ public class Board
         var shape = GetShapeById(id);
         if (shape != null)
         {
-            shapes.Remove(shape);
+            _shapes.Remove(shape);
         }
         else
         {
@@ -78,7 +87,7 @@ public class Board
     }
     public Shape GetShapeById(int id)
     {
-        return shapes.FirstOrDefault(s => s.Id == id);
+        return _shapes.FirstOrDefault(s => s.Id == id);
     }
     public void MoveShape(int id, int newX, int newY)
     {
@@ -96,7 +105,7 @@ public class Board
     }
     public void AddShape(Shape s)
     {
-        shapes.Add(s);
+        _shapes.Add(s);
     }
     public void PrintAvailableShapes()
     {
@@ -111,6 +120,9 @@ public class Board
         selectedShapeId = null;
     }
     
-
+    public int GetNextId()
+    {
+        return _nextId++;
+    }
     
 }

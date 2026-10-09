@@ -10,6 +10,7 @@ while (true)
 {
     Console.WriteLine("write a command:\ndraw list shapes add select remove edit paint move clear save load");
     string output = Console.ReadLine();
+    if (string.IsNullOrWhiteSpace(output)) {continue;}
     
     string[] parts = output.Split(' ', StringSplitOptions.RemoveEmptyEntries);
     if (parts.Length == 0){continue;} 

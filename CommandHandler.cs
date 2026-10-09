@@ -39,8 +39,8 @@ public class CommandHandler
                 return;
             }
 
-            int id = new Random().Next(1, 100);
-
+            int id = _board.GetNextId();
+            
             switch (strType)
             {
                 case "circle":
@@ -167,7 +167,7 @@ public class CommandHandler
         }
         else if(parts.Length >= 3 && int.TryParse(parts[1], out int coX) && int.TryParse(parts[2], out int coY))
         {
-            var shape = _board.GetShapes().LastOrDefault(shape => shape.ContainsPoint(coX, coY));
+            var shape = _board.GetShapes().LastOrDefault(shape => shape.Occupies(coX, coY));
             if (shape != null)
             {
                 _board.selectedShapeId = shape.Id;
@@ -200,7 +200,7 @@ public class CommandHandler
 
     public void PaintCms(string[] parts)
     {
-        if (_board.selectedShapeId != null & parts.Length >= 2)
+        if (_board.selectedShapeId != null && parts.Length >= 2)
         {
             string colorStr = parts[1].ToLower();
             ConsoleColor newColor = colorStr switch
