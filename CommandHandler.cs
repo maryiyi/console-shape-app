@@ -222,27 +222,42 @@ public class CommandHandler
 
     public void EditCmd(string[] parts)
     {
-        if (_board.selectedShapeId != null && parts.Length >= 2)
+        if (_board.selectedShapeId == null)
         {
-            Shape shape = _board.GetShapeById(_board.selectedShapeId.Value);
-            List<int> tempList = new List<int>();
-            for (int i = 1; i < parts.Length; i++)
+            Console.WriteLine("no shape selected");
+            return;
+        }
+        Shape shape = _board.GetShapeById(_board.selectedShapeId.Value);
+        if (shape == null)
+        {
+            Console.WriteLine("selected shape not found");
+            return;
+        }
+        
+
+        List<int> tempList = new List<int>();
+        for (int i = 1; i < parts.Length; i++)
+        {
+            if (int.TryParse(parts[i], out int num))
             {
-                if (int.TryParse(parts[i], out int num))
-                {
-                    tempList.Add(num);
-                }
+                tempList.Add(num);
             }
-            int[] param = tempList.ToArray();
-            if (param.Length > 0)
+            else
             {
-                shape.Edit(param);
-                Console.WriteLine("shape updated");
+                Console.WriteLine("all parametrs must be numbers");
+                return;
             }
         }
-        else
+        
+        int[] param = tempList.ToArray();
+        if (param.Length != shape.ExpectedParameterCount)
         {
-            Console.WriteLine("not selected any shape or too much parametrs");
+            Console.WriteLine(
+                $"error! shape {shape.GetType().Name} are expected to have {shape.ExpectedParameterCount} parametrs");
+            return;
         }
+
+        shape.Edit(param);
+        Console.WriteLine("shape updated");
     }
 }

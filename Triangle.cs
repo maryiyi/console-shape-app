@@ -5,6 +5,7 @@ namespace ConsoleApp1;
 public class Triangle : Shape
 {
     public int Height { get; set; }
+    public override int ExpectedParameterCount => 1;
 
     public Triangle(int id, int x, int y, ConsoleColor color, FillMode fillMode, int height) : base(id, x, y,
         color, fillMode)
@@ -36,11 +37,8 @@ public class Triangle : Shape
         return base.ToString() + $" height: {Height}";
     }
     public override void Edit(int[] newParam)
-    {
-        if (newParam.Length > 0)
-        {
-            Height = newParam[0];
-        }
+    { 
+        Height = newParam[0];
     }
     public override bool ContainsPoint(int x, int y)
     {

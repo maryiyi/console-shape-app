@@ -4,6 +4,7 @@ namespace ConsoleApp1
     public class Circle : Shape
     {
         public int Radius { get; set; }
+        public override int ExpectedParameterCount => 1;
 
         public Circle(int id, int x, int y, ConsoleColor color, FillMode fillMode, int radius) : base(id, x, y,
             color, fillMode)
@@ -37,10 +38,7 @@ namespace ConsoleApp1
         }
         public override void Edit(int[] newParam)
         {
-            if (newParam.Length > 0)
-            {
-                Radius = newParam[0];
-            }
+            Radius = newParam[0];
         }
 
         public override int GetBoarders()

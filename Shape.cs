@@ -16,6 +16,8 @@ public abstract partial class Shape
     public int Y { get; set; }
     public ConsoleColor Color { get; set; }
     public FillMode FillMode { get;}
+    
+    public abstract int ExpectedParameterCount { get; }
 
     public Shape(int id, int x, int y, ConsoleColor color, FillMode fillMode)
     {

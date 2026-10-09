@@ -4,6 +4,7 @@ public class Rectangle : Shape
 {
     public int Height { get; set; }
     public int Width { get; set; }
+    public override int ExpectedParameterCount => 2;
 
     public Rectangle(int id, int x, int y, ConsoleColor color, FillMode fillMode, int height, int width)
         : base(id, x, y, color, fillMode)
@@ -36,12 +37,8 @@ public class Rectangle : Shape
     }
     public override void Edit(int[] newParam)
     {
-        if (newParam.Length > 0)
-        {
-            Height = newParam[0];
-            Width = newParam[1];
-        }
-        
+        Height = newParam[0];
+        Width = newParam[1];
     }
     public override int GetBoarders()
     {
