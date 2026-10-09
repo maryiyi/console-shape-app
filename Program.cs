@@ -4,6 +4,7 @@ using ConsoleApp1;
 
 Board b = new Board();
 FileManager fileManager = new FileManager();
+CommandHandler commandHandler = new CommandHandler(b);
 
 while (true)
 {
@@ -27,7 +28,7 @@ while (true)
             b.PrintAvailableShapes();
              break;
         case "add":
-            b.AddShapeCmd(output);
+            commandHandler.AddShapeCmd(output);
             break;
         case "save":
             fileManager.SaveCmd(parts, b);
@@ -41,19 +42,19 @@ while (true)
             b.ClearSelectedId();
             break;
         case "remove": 
-                b.RemoveCmd(parts);
+            commandHandler.RemoveCmd(parts);
                 break;
         case "select":
-            b.SelectCmd(parts);
+            commandHandler.SelectCmd(parts);
             break;
         case "move":
-            b.MoveCmd(parts);
+            commandHandler.MoveCmd(parts);
             break;
         case "paint":
-            b.PaintCms(parts);
+            commandHandler.PaintCms(parts);
             break;
         case "edit":
-            b.EditCmd(parts);
+            commandHandler.EditCmd(parts);
             break;
     default:
             Console.WriteLine("uncorrect command!");
