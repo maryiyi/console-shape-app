@@ -212,7 +212,15 @@ public class CommandHandler
                 _ => ConsoleColor.White
             };
             Shape shape = _board.GetShapeById(_board.selectedShapeId.Value);
-            shape.Paint(_board.selectedShapeId.Value, newColor, _board);
+            if (_board.selectedShapeId != null)
+            {
+                shape.Paint(_board.selectedShapeId.Value, newColor, _board);
+            }
+            else
+            {
+                Console.WriteLine("error: selected shape does not exist");
+                _board.selectedShapeId = null;
+            }
         }
         else
         {
